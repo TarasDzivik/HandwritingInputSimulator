@@ -1,0 +1,18 @@
+﻿<Application x:Class="HandwritingInputSimulator.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:HandwritingInputSimulator"
+             StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--Color palette-->
+                <ResourceDictionary Source="Views/Resources/Dictionaries/Colors/UiColors.xaml"/>
+                
+                <!--Buttons style-->
+                <ResourceDictionary Source="Views/Resources/Dictionaries/Buttons/Button_Base_Style.xaml"/>
+                
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

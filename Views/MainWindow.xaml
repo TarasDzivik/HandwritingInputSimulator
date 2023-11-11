@@ -1,0 +1,48 @@
+﻿<Window x:Class="HandwritingInputSimulator.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HandwritingInputSimulator"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Height="600" Width="600" HorizontalAlignment="Center">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="{x:Static SystemParameters.CaptionHeight}"
+                      ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}"
+                      UseAeroCaptionButtons="True"/>
+    </WindowChrome.WindowChrome>
+    
+    <Border Background="{DynamicResource Secondary_Colour}" 
+            CornerRadius="25"
+            MouseLeftButtonDown="TitleBar_MouseButtonLeftDown" 
+            MouseEnter="TitleBar_MouseEnter" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="450"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+            <Button Content="Write a poem about me!"
+                    Command="{Binding StartCommand}"
+                    Style="{StaticResource btn_base}"
+                    Grid.Row="0" Height="80"
+                    HorizontalAlignment="Stretch"
+                    Background="Transparent" >
+
+            </Button>
+            <TextBlock Text="{Binding DisplayText}" Grid.Row="1"  
+                   FontFamily="Segoe Script" 
+                   FontSize="20" 
+                   FontWeight="Bold" 
+                   Foreground="{DynamicResource Primary_Colour}" 
+                   Margin="30 0 0 0" 
+                   HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        </Grid>
+    </Border>
+</Window>
