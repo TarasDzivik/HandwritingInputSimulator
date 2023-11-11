@@ -49,12 +49,12 @@ public class MainWindow_ViewModel : ViewModelBase
     #region Command_implementations
     private void StartHandWriteSimulation()
     {
-        Thread.Sleep(500);
+        Thread.Sleep(1000);
         currentCharIndex = 0;
         DisplayText = "";
 
         timer = new DispatcherTimer();
-        timer.Interval = TimeSpan.FromMilliseconds(30);
+        timer.Interval = TimeSpan.FromMilliseconds(40);
         timer.Tick += Timer_Tick!;
         timer.Start();
     }
@@ -67,7 +67,7 @@ public class MainWindow_ViewModel : ViewModelBase
         }
         if (Lines[currentCharIndex] == '\n')
         {
-            Thread.Sleep(200);
+            Thread.Sleep(500);
             DisplayText += Environment.NewLine;
             currentCharIndex++;
         }
@@ -83,11 +83,11 @@ public class MainWindow_ViewModel : ViewModelBase
         // Add a longer delay for specific characters
         if (charactersWithLongDelay.Contains(characterString))
         {
-            Thread.Sleep(200);
+            Thread.Sleep(800);
         }
         else
         {
-            Thread.Sleep(20);
+            Thread.Sleep(0);
         }
     }
     #endregion
